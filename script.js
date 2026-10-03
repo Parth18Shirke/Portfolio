@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    Parth Shirke Portfolio — script.js
    Features: sticky nav, active link, hamburger,
              scroll animations, skill bars, contact form
@@ -140,7 +140,7 @@
      6. CONTACT FORM — simple demo handler
   ══════════════════════════════════════════ */
   if (form) {
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
       const name  = document.getElementById("fname").value.trim();
@@ -152,15 +152,33 @@
         return;
       }
 
-      /* Simulate sending */
       formBtn.disabled = true;
       formBtn.innerHTML = "<span>Sending...</span>";
 
-      setTimeout(() => {
-        form.reset();
-        formBtn.style.display = "none";
-        formOk.style.display = "block";
-      }, 1200);
+      try {
+        const formData = new FormData(form);
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          form.reset();
+          formBtn.style.display = "none";
+          formOk.style.display = "block";
+          formOk.innerHTML = "&#10003; Message sent! I'll get back to you soon.";
+        } else {
+          alert("Something went wrong. Please try again.");
+          formBtn.disabled = false;
+          formBtn.innerHTML = "<span>Send Message</span><span>&#10148;</span>";
+        }
+      } catch (error) {
+        alert("Network error. Please try again later.");
+        formBtn.disabled = false;
+        formBtn.innerHTML = "<span>Send Message</span><span>&#10148;</span>";
+      }
     });
   }
 
