@@ -4,20 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Parth Shirke — CS Engineer &amp; Developer | parthshirke.com</title>
-  <meta name="description" content="Portfolio of Parth Pradip Shirke — B.Tech CSE student at GCE Kolhapur, passionate about AI/ML, software development, and leadership. Secretary at Algobot Technical Club. Creator of VittaBodh, StocksGROW, and more." />
-  <meta name="keywords" content="Parth Shirke, portfolio, computer science, software developer, GCE Kolhapur, Algobot, VittaBodh, StocksGROW, AI, ML, Python, machine learning" />
+  <meta name="description" content="Portfolio of Parth Pradip Shirke — B.Tech CSE student at GCE Kolhapur, passionate about AI/ML, software development, and leadership. Technical Member at CSESA. Creator of VittaBodh, StocksGROW." />
+  <meta name="keywords" content="Parth Shirke, portfolio, computer science, software developer, GCE Kolhapur, Algobot, CSESA, VittaBodh, StocksGROW, AI, ML, Python, machine learning" />
   <meta name="author" content="Parth Pradip Shirke" />
   <link rel="canonical" href="https://parthshirke.com/" />
   <meta property="og:title" content="Parth Shirke — CS Engineer &amp; Developer" />
-  <meta property="og:description" content="B.Tech CSE student | Secretary at Algobot Club | AI/ML Enthusiast | Creator of VittaBodh &amp; StocksGROW" />
+  <meta property="og:description" content="B.Tech CSE (4th Year) | AI/ML Enthusiast | Creator of VittaBodh &amp; StocksGROW" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://parthshirke.com/" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Parth Shirke — CS Engineer &amp; Developer" />
-  <meta name="twitter:description" content="B.Tech CSE | AI/ML Enthusiast | Creator of VittaBodh &amp; StocksGROW" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -25,13 +23,11 @@
   <!-- ========== NAVBAR ========== -->
   <nav id="navbar">
     <div class="container nav-inner">
-      <!-- Logo -->
       <a href="#hero" class="nav-logo">
-        <span class="nav-logo-mark">Parth<span>.ai</span></span>
+        <span class="nav-logo-mark">Parth<span>.dev</span></span>
         <span class="nav-logo-sub">B.Tech CSE &bull; GCE Kolhapur</span>
       </a>
 
-      <!-- Pill nav (Stitch AI style) -->
       <div class="nav-pill" id="navLinks">
         <ul class="nav-links">
           <li><a href="#about"      id="nav-about">About</a></li>
@@ -42,14 +38,13 @@
         </ul>
       </div>
 
-      <!-- Right cluster -->
       <div class="nav-right">
         <div class="nav-status">
           <span class="nav-status-dot"></span>
           Open to Roles
         </div>
-        <a href="#contact" class="nav-links a nav-cta" id="nav-contact">Contact</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <a href="#contact" class="nav-cta" id="nav-contact">Contact</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -59,27 +54,39 @@
   <!-- ========== HERO ========== -->
   <section id="hero">
 
-    <!-- Animated SVG flow lines (Stitch AI-inspired) -->
-    <svg class="hero-flow-svg" viewBox="0 0 1400 700" preserveAspectRatio="none" aria-hidden="true">
-      <path class="flow-path-1" d="M 0 120 Q 350 30 700 150 T 1400 80" fill="none" stroke="#6366f1" stroke-width="1.2"/>
-      <path class="flow-path-2" d="M 0 320 Q 450 420 900 250 T 1400 350" fill="none" stroke="#0ea5e9" stroke-width="1"/>
-      <path class="flow-path-1" d="M 0 520 Q 350 580 700 480 T 1400 560" fill="none" stroke="#10b981" stroke-width="0.8"/>
-      <circle class="flow-dot" cx="350" cy="60"  r="3.5" fill="#6366f1"/>
-      <circle class="flow-dot" cx="700" cy="150" r="4"   fill="#0ea5e9"/>
-      <circle class="flow-dot" cx="1050" cy="200" r="3"  fill="#10b981"/>
+    <!-- SVG animated flow lines -->
+    <svg class="hero-flow-svg" viewBox="0 0 1400 720" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="flowGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#4f46e5"/>
+          <stop offset="100%" stop-color="#0284c7"/>
+        </linearGradient>
+        <linearGradient id="flowGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#0284c7"/>
+          <stop offset="100%" stop-color="#059669"/>
+        </linearGradient>
+      </defs>
+      <path class="flow-path-1" d="M0,140 C200,80 400,200 700,140 S1100,60 1400,110"
+        fill="none" stroke="url(#flowGrad1)" stroke-width="1.5"/>
+      <path class="flow-path-2" d="M0,350 C300,430 600,260 900,330 S1200,420 1400,360"
+        fill="none" stroke="url(#flowGrad2)" stroke-width="1.2"/>
+      <path class="flow-path-3" d="M0,560 C250,600 550,500 800,550 S1150,620 1400,580"
+        fill="none" stroke="url(#flowGrad1)" stroke-width="0.9"/>
+      <!-- Animated dots -->
+      <circle class="flow-dot"  cx="350" cy="110" r="4" fill="#4f46e5"/>
+      <circle class="flow-dot-2" cx="700" cy="140" r="4" fill="#0284c7"/>
+      <circle class="flow-dot-3" cx="1050" cy="120" r="4" fill="#059669"/>
     </svg>
 
     <div class="container hero-grid">
-      <!-- Left: Text -->
+      <!-- Left: content -->
       <div class="hero-text">
-
-        <!-- Status badges row -->
         <div class="hero-meta-row">
           <div class="hero-badge">
             <span class="dot"></span>
             Open to Opportunities
           </div>
-          <span class="hero-badge-track">B.Tech CSE &bull; AI Track</span>
+          <span class="hero-badge-track">B.Tech CSE &bull; 4th Year</span>
         </div>
 
         <h1 class="hero-name">
@@ -88,14 +95,20 @@
         </h1>
 
         <p class="hero-role">
-          B.Tech CSE &bull; <span class="highlight">Secretary @ Algobot Club</span> &bull; AI/ML Enthusiast
+          B.Tech CSE &bull; <span class="highlight">AI/ML Enthusiast</span> &bull; Club Leader
         </p>
 
-        <!-- Telemetry panel (Stitch AI style) -->
+        <!-- Typewriter -->
+        <p class="hero-typewriter">
+          <span class="typewriter-text" id="typewriterText"></span>
+          <span class="typewriter-cursor"></span>
+        </p>
+
+        <!-- Telemetry panel -->
         <div class="hero-metrics">
           <div class="hero-metric">
             <span class="hero-metric-label">
-              <span class="metric-dot cyan"></span>Years Coding
+              <span class="metric-dot cyan"></span>Coding Exp.
             </span>
             <span class="hero-metric-value">3<span class="unit">+ yrs</span></span>
           </div>
@@ -103,38 +116,32 @@
             <span class="hero-metric-label">
               <span class="metric-dot indigo"></span>BTech Year
             </span>
-            <span class="hero-metric-value">2<span class="unit">nd</span></span>
+            <span class="hero-metric-value">4<span class="unit">th</span></span>
           </div>
           <div class="hero-metric">
             <span class="hero-metric-label">
-              <span class="metric-dot emerald"></span>Projects Built
+              <span class="metric-dot emerald"></span>Projects
             </span>
             <span class="hero-metric-value">4<span class="unit">+</span></span>
           </div>
           <div class="hero-metric">
             <span class="hero-metric-label">
-              <span class="metric-dot indigo"></span>Club Role
+              <span class="metric-dot indigo"></span>Internships
             </span>
-            <span class="hero-metric-value" style="font-size:1rem;">Sec.</span>
+            <span class="hero-metric-value">2<span class="unit"></span></span>
           </div>
         </div>
 
         <div class="hero-btns">
-          <a href="#projects" class="btn-primary">
-            &#128196; View Projects
-          </a>
-          <a href="#contact" class="btn-outline">
-            &#9993; Get in Touch
-          </a>
-          <a href="https://github.com/Parth18Shirke" target="_blank" rel="noopener" class="btn-mono">
-            &lt;/&gt; GitHub
-          </a>
+          <a href="#projects" class="btn-primary">&#128196; View Projects</a>
+          <a href="#contact"  class="btn-outline">&#9993; Get in Touch</a>
+          <a href="https://github.com/Parth18Shirke" target="_blank" rel="noopener" class="btn-ghost">&lt;/&gt; GitHub</a>
         </div>
 
         <div class="hero-socials">
           <a href="mailto:parthpshirke1811@gmail.com" class="social-icon" title="Email" aria-label="Email">&#9993;</a>
           <a href="https://github.com/Parth18Shirke" target="_blank" rel="noopener" class="social-icon" title="GitHub" aria-label="GitHub">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C10.602 19.95 9.815 19.58 9.815 19.58c-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
           </a>
           <a href="https://www.linkedin.com/in/parth-shirke-700290289/" target="_blank" rel="noopener" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -142,33 +149,46 @@
         </div>
       </div>
 
-      <!-- Right: Photo + Stats -->
+      <!-- Right: initials avatar + stats -->
       <div class="hero-photo-wrap">
-        <div class="hero-photo-ring">
-          <img src="Photo.jpg" alt="Parth Pradip Shirke" onerror="this.style.display='none';document.querySelector('.hero-initials').style.display='flex'"/>
-          <div class="hero-initials" aria-label="Parth Pradip Shirke">PS</div>
+        <div class="hero-initials-wrap">
+          <!-- Animated ring SVG -->
+          <svg class="hero-ring-svg" viewBox="0 0 260 260" fill="none" aria-hidden="true">
+            <circle class="ring-bg" cx="130" cy="130" r="124"/>
+            <path class="ring-grad-path" d="M130,6 A124,124 0 1,1 129.9,6"
+              stroke="url(#ringGrad)" stroke-width="3" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%"   stop-color="#4f46e5"/>
+                <stop offset="50%"  stop-color="#0284c7"/>
+                <stop offset="100%" stop-color="#059669"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="hero-initials-box">
+            <span class="hero-initials">PS</span>
+          </div>
         </div>
 
-        <!-- Stitch-AI telemetry stats panel -->
+        <!-- Stats panel -->
         <div class="hero-stats-panel">
           <div class="hero-stat">
-            <span class="num">3+</span>
+            <span class="num" data-count="3">0</span>
             <span class="lbl">Yrs Coding</span>
           </div>
           <div class="hero-stat">
-            <span class="num">2nd</span>
+            <span class="num">4th</span>
             <span class="lbl">BTech Yr</span>
           </div>
           <div class="hero-stat">
-            <span class="num">&#10003;</span>
-            <span class="lbl">Club Sec.</span>
+            <span class="num" data-count="4">0</span>
+            <span class="lbl">Projects</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Scroll hint -->
-    <div class="scroll-hint">
+    <div class="scroll-hint" aria-hidden="true">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       Scroll
     </div>
@@ -181,36 +201,37 @@
         <div class="about-text fade-in">
           <span class="section-label">Who I Am</span>
           <h2 class="section-title">Passionate about <span class="gradient-text">building things</span></h2>
-          <p>Hello! I'm <strong>Parth Pradip Shirke</strong>, a Computer Science and Engineering undergraduate at Government College of Engineering, Kolhapur (2023–2027). I have a strong passion for software development, public speaking, and leadership.</p>
-          <p>I currently serve as the <strong>Secretary of the Algobot Technical Club</strong>, where I organize and promote tech events and coding competitions for peers. I believe in continuous learning and enjoy building scalable, impactful, and user-friendly solutions.</p>
-          <p>My academic journey spans both rural and urban institutions, which helped me develop a balanced perspective. Beyond code, I love reading, writing, and delivering impactful speeches.</p>
+          <p>Hi! I'm <strong>Parth Pradip Shirke</strong>, a 4th-year Computer Science &amp; Engineering undergraduate at Government College of Engineering, Kolhapur (2023–2027). I have a strong passion for software development, AI/ML, public speaking, and leadership.</p>
+          <p>I am an active member of the <strong>CSESA (Computer Science &amp; Engineering Student Association)</strong> and previously served as <strong>Secretary of the Algobot Technical Club</strong>, where I organized seminars, coding competitions, and workshops for peers.</p>
+          <p>My work spans AI-powered applications, stock forecasting models, and full-stack projects. I believe in writing clean code that solves real problems — and I bring the same precision to everything I do.</p>
           <div class="about-chips">
             <span class="chip">&#128172; Public Speaking</span>
-            <span class="chip">&#128218; Continuous Learner</span>
+            <span class="chip">&#129504; AI/ML Builder</span>
             <span class="chip">&#129309; Team Leader</span>
             <span class="chip">&#9997; Technical Writer</span>
           </div>
         </div>
+
         <div class="about-cards fade-in fade-in-delay-1">
           <div class="about-card">
             <div class="about-card-icon">&#127979;</div>
             <h4>Education</h4>
-            <p>B.Tech CSE at GCE Kolhapur, 2023–2027</p>
+            <p>B.Tech CSE at GCE Kolhapur, 2023–2027 (4th Year)</p>
           </div>
           <div class="about-card">
             <div class="about-card-icon">&#127942;</div>
             <h4>Leadership</h4>
-            <p>Secretary, Algobot Technical Club</p>
+            <p>Secretary, Algobot Club &bull; Technical Member, CSESA</p>
           </div>
           <div class="about-card">
             <div class="about-card-icon">&#128187;</div>
-            <h4>Internship</h4>
-            <p>IT Solutions — real-world project experience</p>
+            <h4>Internships</h4>
+            <p>Twinkle IT (.NET) &bull; Vinayak IT Solutions</p>
           </div>
           <div class="about-card">
             <div class="about-card-icon">&#127757;</div>
             <h4>Goal</h4>
-            <p>Aspiring Software Engineer solving real problems</p>
+            <p>Aspiring Software Engineer solving real-world problems with AI</p>
           </div>
         </div>
       </div>
@@ -223,11 +244,10 @@
       <div class="fade-in">
         <span class="section-label">What I Know</span>
         <h2 class="section-title">Skills &amp; <span class="gradient-text">Technologies</span></h2>
-        <p class="section-desc">A growing toolkit built through coursework, projects, and hands-on exploration.</p>
+        <p class="section-desc">A growing toolkit built through coursework, hands-on projects, and internship experience.</p>
       </div>
 
       <div class="skills-categories">
-        <!-- Programming -->
         <div class="skill-category fade-in fade-in-delay-1">
           <div class="skill-cat-header">
             <div class="skill-cat-icon">&#128187;</div>
@@ -245,63 +265,70 @@
             <div class="skill-meta"><span class="skill-name">JavaScript</span><span class="skill-pct">55%</span></div>
             <div class="skill-bar"><div class="skill-fill" data-width="55"></div></div>
           </div>
+          <div class="skill-item">
+            <div class="skill-meta"><span class="skill-name">VB.NET</span><span class="skill-pct">60%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+          </div>
         </div>
 
-        <!-- Web Dev -->
         <div class="skill-category fade-in fade-in-delay-2">
           <div class="skill-cat-header">
             <div class="skill-cat-icon">&#127760;</div>
-            <h3>Web Development</h3>
+            <h3>Web &amp; Database</h3>
           </div>
           <div class="skill-item">
-            <div class="skill-meta"><span class="skill-name">HTML5</span><span class="skill-pct">85%</span></div>
+            <div class="skill-meta"><span class="skill-name">HTML5 / CSS3</span><span class="skill-pct">85%</span></div>
             <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-meta"><span class="skill-name">CSS3</span><span class="skill-pct">75%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+            <div class="skill-meta"><span class="skill-name">ASP.NET Web Forms</span><span class="skill-pct">60%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-meta"><span class="skill-name">Responsive Design</span><span class="skill-pct">70%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
-          </div>
-        </div>
-
-        <!-- CS Fundamentals -->
-        <div class="skill-category fade-in fade-in-delay-3">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon">&#129504;</div>
-            <h3>CS Fundamentals</h3>
-          </div>
-          <div class="skill-item">
-            <div class="skill-meta"><span class="skill-name">Data Structures &amp; Algorithms</span><span class="skill-pct">65%</span></div>
+            <div class="skill-meta"><span class="skill-name">SQL Server / MySQL</span><span class="skill-pct">65%</span></div>
             <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-meta"><span class="skill-name">Problem Solving</span><span class="skill-pct">75%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-meta"><span class="skill-name">OOP Concepts</span><span class="skill-pct">70%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+            <div class="skill-meta"><span class="skill-name">ADO.NET / CRUD</span><span class="skill-pct">60%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
           </div>
         </div>
 
-        <!-- Soft Skills -->
-        <div class="skill-category fade-in fade-in-delay-1">
+        <div class="skill-category fade-in fade-in-delay-3">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">&#129504;</div>
+            <h3>AI / ML &amp; Data Science</h3>
+          </div>
+          <div class="skill-item">
+            <div class="skill-meta"><span class="skill-name">Machine Learning</span><span class="skill-pct">70%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-meta"><span class="skill-name">Deep Learning / DNN</span><span class="skill-pct">65%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-meta"><span class="skill-name">Data Analysis</span><span class="skill-pct">68%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="68"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category fade-in fade-in-delay-4">
           <div class="skill-cat-header">
             <div class="skill-cat-icon">&#127942;</div>
-            <h3>Soft Skills &amp; Tools</h3>
+            <h3>Tools &amp; Soft Skills</h3>
           </div>
           <div class="tech-tags">
+            <span class="tech-tag">Git &amp; GitHub</span>
+            <span class="tech-tag">VS Code</span>
+            <span class="tech-tag">Streamlit</span>
+            <span class="tech-tag">Linux Basics</span>
             <span class="tech-tag">Public Speaking</span>
             <span class="tech-tag">Team Leadership</span>
             <span class="tech-tag">Event Management</span>
             <span class="tech-tag">Technical Writing</span>
-            <span class="tech-tag">Git &amp; GitHub</span>
-            <span class="tech-tag">VS Code</span>
-            <span class="tech-tag">Linux Basics</span>
-            <span class="tech-tag">Agile Mindset</span>
+            <span class="tech-tag">Problem Solving</span>
+            <span class="tech-tag">OOP Concepts</span>
           </div>
         </div>
       </div>
@@ -314,14 +341,14 @@
       <div class="fade-in">
         <span class="section-label">My Journey</span>
         <h2 class="section-title">Education &amp; <span class="gradient-text">Academic Path</span></h2>
-        <p class="section-desc">From a small town in Ajara to engineering college — a journey shaped by curiosity.</p>
+        <p class="section-desc">From Ajara to engineering college — a journey shaped by curiosity and hard work.</p>
       </div>
 
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
-            <span class="timeline-year">2023 — Present</span>
+            <span class="timeline-year">2023 — 2027</span>
             <h3>B.Tech in Computer Science &amp; Engineering</h3>
             <p class="institution">Government College of Engineering, Kolhapur</p>
           </div>
@@ -360,11 +387,33 @@
       <div class="fade-in">
         <span class="section-label">What I've Done</span>
         <h2 class="section-title">Experience &amp; <span class="gradient-text">Roles</span></h2>
-        <p class="section-desc">Hands-on roles that shaped my understanding of real-world tech and leadership.</p>
+        <p class="section-desc">Internships and leadership roles that built my skills in the real world.</p>
       </div>
 
       <div class="experience-grid">
+
+        <!-- CSESA -->
         <div class="exp-card fade-in fade-in-delay-1">
+          <div class="exp-header">
+            <div style="display:flex;align-items:flex-start;gap:0.75rem;">
+              <div class="exp-icon">&#128101;</div>
+              <div class="exp-meta">
+                <h3>Technical Member</h3>
+                <div class="org">CSESA — CS &amp; Engg. Student Association</div>
+              </div>
+            </div>
+            <span class="exp-badge badge-active">2025–2026</span>
+          </div>
+          <p>Serving as a Technical Member at CSESA (Computer Science and Engineering Student Association). Contributing to organizing technical events, workshops, and initiatives that promote the growth of CS students within the college.</p>
+          <div class="exp-tags">
+            <span class="tech-tag">Technical Events</span>
+            <span class="tech-tag">Student Community</span>
+            <span class="tech-tag">Coordination</span>
+          </div>
+        </div>
+
+        <!-- Algobot Secretary -->
+        <div class="exp-card fade-in fade-in-delay-2">
           <div class="exp-header">
             <div style="display:flex;align-items:flex-start;gap:0.75rem;">
               <div class="exp-icon">&#127942;</div>
@@ -373,9 +422,9 @@
                 <div class="org">Algobot Technical Club — GCE Kolhapur</div>
               </div>
             </div>
-            <span class="exp-badge badge-active">Active</span>
+            <span class="exp-badge badge-done">Completed</span>
           </div>
-          <p>Serving as Secretary of the Algobot Technical Club. Responsibilities include organizing seminars, coding competitions, and workshops. Act as a bridge between club members and college administration, and help promote a culture of tech innovation among peers.</p>
+          <p>Served as Secretary of the Algobot Technical Club. Organized seminars, coding competitions, and technical workshops. Acted as a bridge between club members and college administration, promoting a culture of innovation and algorithmic thinking.</p>
           <div class="exp-tags">
             <span class="tech-tag">Leadership</span>
             <span class="tech-tag">Event Management</span>
@@ -383,7 +432,30 @@
           </div>
         </div>
 
-        <div class="exp-card fade-in fade-in-delay-2">
+        <!-- Twinkle IT -->
+        <div class="exp-card fade-in fade-in-delay-3">
+          <div class="exp-header">
+            <div style="display:flex;align-items:flex-start;gap:0.75rem;">
+              <div class="exp-icon">&#128421;</div>
+              <div class="exp-meta">
+                <h3>Microsoft .NET Intern</h3>
+                <div class="org">Twinkle IT Solution</div>
+              </div>
+            </div>
+            <span class="exp-badge badge-done">Completed</span>
+          </div>
+          <p>Completed a Microsoft .NET-focused internship, gaining hands-on experience building web applications using ASP.NET Web Forms, VB.NET, and ADO.NET. Worked on database connectivity, CRUD operations with Microsoft SQL Server, and full-stack web application concepts.</p>
+          <div class="exp-tags">
+            <span class="tech-tag">ASP.NET Web Forms</span>
+            <span class="tech-tag">VB.NET</span>
+            <span class="tech-tag">ADO.NET</span>
+            <span class="tech-tag">MS SQL Server</span>
+            <span class="tech-tag">CRUD</span>
+          </div>
+        </div>
+
+        <!-- Vinayak IT -->
+        <div class="exp-card fade-in fade-in-delay-4">
           <div class="exp-header">
             <div style="display:flex;align-items:flex-start;gap:0.75rem;">
               <div class="exp-icon">&#128187;</div>
@@ -394,13 +466,14 @@
             </div>
             <span class="exp-badge badge-done">Completed</span>
           </div>
-          <p>Completed a 3-week internship gaining exposure to real-world IT workflows, project management basics, client communication, and day-to-day operations of a software firm. Worked alongside experienced professionals on live projects.</p>
+          <p>Completed a 3-week internship gaining exposure to real-world IT workflows, project management basics, client communication, and day-to-day operations of a software firm. Worked alongside experienced professionals on live client projects.</p>
           <div class="exp-tags">
             <span class="tech-tag">IT Workflows</span>
             <span class="tech-tag">Project Management</span>
             <span class="tech-tag">Client Interaction</span>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -411,23 +484,29 @@
       <div class="fade-in">
         <span class="section-label">What I've Built</span>
         <h2 class="section-title">Projects &amp; <span class="gradient-text">Builds</span></h2>
-        <p class="section-desc">Real-world projects spanning AI/ML, full-stack development, and data science.</p>
+        <p class="section-desc">Real-world projects spanning AI/ML, full-stack web development, and data science.</p>
       </div>
 
       <div class="projects-grid">
-        <!-- 1. VittaBodh -->
+
+        <!-- VittaBodh -->
         <div class="project-card featured fade-in fade-in-delay-1">
           <div class="project-top">
             <span class="project-icon">&#128181;</span>
             <div class="project-links">
               <span class="project-badge badge-featured">Featured</span>
-              <a href="https://github.com/Parth18Shirke/Vittabodh" target="_blank" rel="noopener" class="project-link" title="GitHub">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+              <a href="https://github.com/Parth18Shirke/Vittabodh" target="_blank" rel="noopener" class="project-link" title="View on GitHub" aria-label="VittaBodh on GitHub">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C10.602 19.95 9.815 19.58 9.815 19.58c-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
               </a>
             </div>
           </div>
           <h3>VittaBodh</h3>
-          <p>An explainable AI loan assessment platform using a custom DNN model for loan approval predictions. Features Integrated Gradients for risk breakdown across 5 key pillars, powered by Gemini AI for personalized, human-readable explanations and actionable financial improvement suggestions.</p>
+          <p>Explainable AI loan assessment platform using a custom DNN model. Features Integrated Gradients for risk breakdown across 5 key financial pillars, powered by Gemini AI for personalized, human-readable explanations and actionable improvement suggestions.</p>
+          <div style="margin-bottom:1rem;">
+            <a href="https://github.com/Parth18Shirke/Vittabodh" target="_blank" rel="noopener" class="project-link-demo">
+              &#127760; View Live App
+            </a>
+          </div>
           <div class="project-stack">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">Deep Learning</span>
@@ -437,19 +516,19 @@
           </div>
         </div>
 
-        <!-- 2. StocksGROW -->
+        <!-- StocksGROW -->
         <div class="project-card featured fade-in fade-in-delay-2">
           <div class="project-top">
             <span class="project-icon">&#128200;</span>
             <div class="project-links">
               <span class="project-badge badge-featured">Featured</span>
-              <a href="https://github.com/Parth18Shirke/Stock-Price-Prediction-Model-STOCKSGROW-" target="_blank" rel="noopener" class="project-link" title="GitHub">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+              <a href="https://github.com/Parth18Shirke/Stock-Price-Prediction-Model-STOCKSGROW-" target="_blank" rel="noopener" class="project-link" title="View on GitHub" aria-label="StocksGROW on GitHub">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C10.602 19.95 9.815 19.58 9.815 19.58c-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
               </a>
             </div>
           </div>
           <h3>StocksGROW</h3>
-          <p>A web-based stock analysis and forecasting application built with Streamlit and Machine Learning. Provides a dashboard, detailed stock analysis, and future price prediction using an LSTM model. Supports login/registration with MySQL and analyzes stocks, crypto, and commodities.</p>
+          <p>Web-based stock analysis and forecasting application. Provides interactive dashboards, detailed stock analysis, and future price prediction using an LSTM model. Supports user login/registration with MySQL. Analyzes stocks, crypto, and commodities.</p>
           <div class="project-stack">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">LSTM</span>
@@ -459,41 +538,36 @@
           </div>
         </div>
 
-        <!-- 3. TwinSeg AI (Upcoming) -->
+        <!-- TwinSeg AI -->
         <div class="project-card upcoming fade-in fade-in-delay-3">
           <div class="project-top">
             <span class="project-icon">&#129504;</span>
-            <div class="project-links">
-              <span class="project-badge badge-upcoming">Upcoming</span>
-            </div>
+            <span class="project-badge badge-upcoming">Upcoming</span>
           </div>
           <h3>TwinSeg AI</h3>
-          <p>An upcoming AI-powered project focused on intelligent segmentation and analysis. Currently in development — leveraging cutting-edge deep learning techniques for automated visual intelligence.</p>
+          <p>An upcoming AI-powered project focused on intelligent segmentation and automated visual analysis. Leverages cutting-edge deep learning techniques for computer vision tasks.</p>
           <div class="project-stack">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">Deep Learning</span>
             <span class="tech-tag">Computer Vision</span>
-            <span class="tech-tag">AI</span>
           </div>
         </div>
 
-        <!-- 4. Employee Attrition Prediction (Upcoming) -->
-        <div class="project-card upcoming fade-in fade-in-delay-1">
+        <!-- Employee Attrition -->
+        <div class="project-card upcoming fade-in fade-in-delay-4">
           <div class="project-top">
             <span class="project-icon">&#128101;</span>
-            <div class="project-links">
-              <span class="project-badge badge-upcoming">Upcoming</span>
-            </div>
+            <span class="project-badge badge-upcoming">Upcoming</span>
           </div>
           <h3>Employee Attrition Prediction</h3>
-          <p>A machine learning system to predict employee turnover risk using HR data analytics. Will provide actionable insights for talent retention strategies through data-driven predictive modeling.</p>
+          <p>A machine learning system to predict employee turnover risk using HR data analytics. Provides actionable insights for talent retention through data-driven predictive modeling.</p>
           <div class="project-stack">
             <span class="tech-tag">Python</span>
-            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">ML</span>
             <span class="tech-tag">Data Analytics</span>
-            <span class="tech-tag">HR Tech</span>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -508,67 +582,65 @@
       </div>
 
       <div class="contact-grid">
-        <!-- Info -->
+        <!-- Left: social CTAs -->
         <div class="contact-info fade-in">
-          <h3>Contact Information</h3>
-          <p>Feel free to reach out through any of the channels below. I typically respond within 24 hours.</p>
-          <div class="contact-items">
-            <a href="mailto:parthpshirke1811@gmail.com" class="contact-item">
-              <div class="contact-item-icon">&#9993;</div>
-              <div class="contact-item-info">
-                <div class="label">Email</div>
-                <div class="value">parthpshirke1811@gmail.com</div>
+          <h3>Find Me Online</h3>
+          <p>Pick your preferred platform — I'm active on both and usually respond within 24 hours.</p>
+
+          <div class="contact-social-btns">
+            <a href="https://github.com/Parth18Shirke" target="_blank" rel="noopener" class="contact-social-btn" id="cta-github">
+              <div class="csb-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C10.602 19.95 9.815 19.58 9.815 19.58c-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+              </div>
+              <div class="csb-text">
+                <span class="csb-label">Source Code &amp; Projects</span>
+                <span class="csb-action">Connect on GitHub &#8594;</span>
               </div>
             </a>
 
-            <a href="https://github.com/Parth18Shirke" target="_blank" rel="noopener" class="contact-item">
-              <div class="contact-item-icon">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+            <a href="https://www.linkedin.com/in/parth-shirke-700290289/" target="_blank" rel="noopener" class="contact-social-btn" id="cta-linkedin">
+              <div class="csb-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               </div>
-              <div class="contact-item-info">
-                <div class="label">GitHub</div>
-                <div class="value">github.com/Parth18Shirke</div>
-              </div>
-            </a>
-            <a href="https://www.linkedin.com/in/parth-shirke-700290289/" target="_blank" rel="noopener" class="contact-item">
-              <div class="contact-item-icon">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              </div>
-              <div class="contact-item-info">
-                <div class="label">LinkedIn</div>
-                <div class="value">linkedin.com/in/parth-shirke</div>
+              <div class="csb-text">
+                <span class="csb-label">Professional Network</span>
+                <span class="csb-action">Connect on LinkedIn &#8594;</span>
               </div>
             </a>
           </div>
+
+          <!-- Email row -->
+          <div class="contact-email-row">
+            <span>&#9993;</span>
+            <span>Or email me directly at <a href="mailto:parthpshirke1811@gmail.com">parthpshirke1811@gmail.com</a></span>
+          </div>
         </div>
 
-        <!-- Form — Web3Forms powered -->
+        <!-- Right: Form -->
         <div class="contact-form fade-in fade-in-delay-2">
-          <p class="contact-form-title">Send a Message</p>
-          <p class="contact-form-sub">// Powered by Web3Forms — messages land directly in my inbox</p>
+          <p class="contact-form-title">&#128231; Send a Message</p>
           <form id="contactForm" novalidate>
-            <!-- Web3Forms access key — replace with your own key from web3forms.com -->
             <input type="hidden" name="access_key" value="425b96a9-2548-4bbf-8cb0-2512c20b373c">
-            <input type="hidden" name="subject" value="New message from parthshirke.com portfolio">
-            <input type="checkbox" name="botcheck" style="display:none">
+            <input type="hidden" name="subject" value="New contact from parthshirke.com">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
 
             <div class="form-row">
               <div class="form-group">
                 <label for="fname">First Name</label>
-                <input type="text" id="fname" name="name" placeholder="John" required />
+                <input type="text" id="fname" name="name" placeholder="John" required autocomplete="given-name"/>
               </div>
               <div class="form-group">
                 <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lname" placeholder="Doe" />
+                <input type="text" id="lname" name="last_name" placeholder="Doe" autocomplete="family-name"/>
               </div>
             </div>
             <div class="form-group">
               <label for="femail">Email Address</label>
-              <input type="email" id="femail" name="email" placeholder="john@example.com" required />
+              <input type="email" id="femail" name="email" placeholder="john@example.com" required autocomplete="email"/>
             </div>
             <div class="form-group">
               <label for="fsubject">Subject</label>
-              <input type="text" id="fsubject" name="subject_line" placeholder="Internship opportunity / Project collaboration..." />
+              <input type="text" id="fsubject" name="message_subject" placeholder="Internship opportunity / Project collab..."/>
             </div>
             <div class="form-group">
               <label for="fmessage">Message</label>
@@ -579,11 +651,9 @@
               <span>&#10148;</span>
             </button>
             <div class="form-success" id="formSuccess">
-              &#10003; Message delivered! I'll get back to you within 24 hours.
+              &#10003;&nbsp; Message delivered! I'll get back to you within 24 hours.
             </div>
-            <div class="form-error-msg" id="formError">
-              &#9888; Something went wrong. Please try again or email me directly.
-            </div>
+            <div class="form-error-msg" id="formError"></div>
           </form>
         </div>
       </div>
@@ -596,9 +666,8 @@
       <div class="footer-brand">Parth Pradip Shirke</div>
       <div class="footer-socials">
         <a href="mailto:parthpshirke1811@gmail.com" class="social-icon" title="Email" aria-label="Email">&#9993;</a>
-        <a href="tel:+919579239113" class="social-icon" title="Phone" aria-label="Phone">&#128222;</a>
         <a href="https://github.com/Parth18Shirke" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C10.602 19.95 9.815 19.58 9.815 19.58c-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
         </a>
         <a href="https://www.linkedin.com/in/parth-shirke-700290289/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>

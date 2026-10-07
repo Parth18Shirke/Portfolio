@@ -1,8 +1,8 @@
 /* ============================================================
    Parth Shirke Portfolio — script.js
-   Features: sticky nav, active link, hamburger (pill nav),
-             scroll animations, skill bars, Web3Forms contact,
-             hero parallax, cursor-trail effect
+   Features: sticky nav, active links, hamburger, typewriter,
+             counter animation, scroll fade-ins, skill bars,
+             staggered cards, Web3Forms contact, parallax ring
 ============================================================ */
 
 (function () {
@@ -11,7 +11,7 @@
   /* ── DOM refs ── */
   const navbar    = document.getElementById("navbar");
   const hamburger = document.getElementById("hamburger");
-  const navPill   = document.getElementById("navLinks");       // the pill container
+  const navPill   = document.getElementById("navLinks");
   const allLinks  = navPill ? navPill.querySelectorAll("a[href^='#']") : [];
   const sections  = document.querySelectorAll("section[id]");
   const form      = document.getElementById("contactForm");
@@ -20,45 +20,36 @@
   const formErr   = document.getElementById("formError");
 
   /* ══════════════════════════════════════════
-     1. NAVBAR — scroll style + active link
+     1. NAVBAR — scroll class + active link
   ══════════════════════════════════════════ */
   function onScroll() {
-    navbar.classList.toggle("scrolled", window.scrollY > 30);
-
+    navbar.classList.toggle("scrolled", window.scrollY > 40);
     let current = "";
     sections.forEach(sec => {
-      const top = sec.offsetTop - 100;
-      if (window.scrollY >= top) current = sec.id;
+      if (window.scrollY >= sec.offsetTop - 110) current = sec.id;
     });
-
     allLinks.forEach(a => {
-      a.classList.remove("active");
-      if (a.getAttribute("href") === "#" + current) {
-        a.classList.add("active");
-      }
+      a.classList.toggle("active", a.getAttribute("href") === "#" + current);
     });
   }
-
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
   /* ══════════════════════════════════════════
-     2. HAMBURGER MENU (mobile) — pill nav
+     2. HAMBURGER (mobile)
   ══════════════════════════════════════════ */
   if (hamburger && navPill) {
     hamburger.addEventListener("click", function () {
       this.classList.toggle("open");
       navPill.classList.toggle("open");
     });
-
-    allLinks.forEach(a => {
-      a.addEventListener("click", function () {
+    [...allLinks].forEach(a =>
+      a.addEventListener("click", () => {
         hamburger.classList.remove("open");
         navPill.classList.remove("open");
-      });
-    });
-
-    document.addEventListener("click", function (e) {
+      })
+    );
+    document.addEventListener("click", e => {
       if (!navbar.contains(e.target)) {
         hamburger.classList.remove("open");
         navPill.classList.remove("open");
@@ -69,194 +60,204 @@
   /* ══════════════════════════════════════════
      3. SMOOTH SCROLL
   ══════════════════════════════════════════ */
-  document.querySelectorAll("a[href^='#']").forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
+  document.querySelectorAll("a[href^='#']").forEach(a =>
+    a.addEventListener("click", function (e) {
       const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: "smooth" }); }
+    })
+  );
+
+  /* ══════════════════════════════════════════
+     4. TYPEWRITER EFFECT
+  ══════════════════════════════════════════ */
+  const tw = document.getElementById("typewriterText");
+  if (tw) {
+    const phrases = [
+      "Building AI-powered solutions",
+      "B.Tech CSE · 4th Year @ GCE Kolhapur",
+      "Secretary, Algobot Technical Club",
+      "Technical Member, CSESA 2025–2026",
+      "Creator of VittaBodh & StocksGROW",
+      "Exploring Machine Learning & Deep Learning",
+    ];
+    let pi = 0, ci = 0, deleting = false;
+
+    function tick() {
+      const phrase = phrases[pi];
+      tw.textContent = deleting ? phrase.slice(0, ci--) : phrase.slice(0, ci++);
+
+      let delay = deleting ? 45 : 75;
+      if (!deleting && ci > phrase.length) {
+        delay = 1800; deleting = true;
+      } else if (deleting && ci < 0) {
+        deleting = false; ci = 0;
+        pi = (pi + 1) % phrases.length;
+        delay = 400;
+      }
+      setTimeout(tick, delay);
+    }
+    setTimeout(tick, 900);
+  }
+
+  /* ══════════════════════════════════════════
+     5. COUNTER ANIMATION on stats
+  ══════════════════════════════════════════ */
+  function animateCounters() {
+    document.querySelectorAll(".hero-stat .num[data-count]").forEach(el => {
+      const target = parseInt(el.getAttribute("data-count"), 10);
+      let current = 0;
+      const step = Math.ceil(target / 30);
+      const interval = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = current + "+";
+        if (current >= target) clearInterval(interval);
+      }, 40);
+    });
+  }
+  const heroEl = document.getElementById("hero");
+  if (heroEl) {
+    const co = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) { animateCounters(); co.disconnect(); }
+    }, { threshold: 0.3 });
+    co.observe(heroEl);
+  }
+
+  /* ══════════════════════════════════════════
+     6. INTERSECTION OBSERVER — fade-in + timeline
+  ══════════════════════════════════════════ */
+  const fadeObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("visible"); fadeObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.10 });
+  document.querySelectorAll(".fade-in").forEach(el => fadeObs.observe(el));
+
+  const timelineObs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add("visible"), i * 130);
+        timelineObs.unobserve(e.target);
       }
     });
+  }, { threshold: 0.08 });
+  document.querySelectorAll(".timeline-item").forEach(el => timelineObs.observe(el));
+
+  /* ══════════════════════════════════════════
+     7. SKILL BARS — animate on scroll
+  ══════════════════════════════════════════ */
+  const skillObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.getAttribute("data-width") + "%";
+        skillObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll(".skill-fill").forEach(el => skillObs.observe(el));
+
+  /* ══════════════════════════════════════════
+     8. STAGGERED CARD ANIMATIONS
+  ══════════════════════════════════════════ */
+  const cardGridObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const cards = entry.target.querySelectorAll(
+          ".project-card, .exp-card, .skill-category, .about-card"
+        );
+        cards.forEach((card, i) => {
+          card.style.transition = `opacity 0.5s ease ${i * 80}ms, transform 0.5s ease ${i * 80}ms`;
+          setTimeout(() => {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+          }, i * 80);
+        });
+        cardGridObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.06 });
+
+  document.querySelectorAll(".projects-grid, .experience-grid, .skills-categories, .about-cards").forEach(grid => {
+    grid.querySelectorAll(".project-card, .exp-card, .skill-category, .about-card").forEach(card => {
+      card.style.opacity = "0";
+      card.style.transform = "translateY(22px)";
+    });
+    cardGridObs.observe(grid);
   });
 
   /* ══════════════════════════════════════════
-     4. INTERSECTION OBSERVER — fade-in & timelines
+     9. HERO RING PARALLAX (mouse tracking)
   ══════════════════════════════════════════ */
-  const fadeEls     = document.querySelectorAll(".fade-in");
-  const timelineEls = document.querySelectorAll(".timeline-item");
-
-  const fadeObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          fadeObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.10 }
-  );
-  fadeEls.forEach(el => fadeObserver.observe(el));
-
-  const timelineObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add("visible");
-          }, i * 120);
-          timelineObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.08 }
-  );
-  timelineEls.forEach(el => timelineObserver.observe(el));
+  const heroSec   = document.getElementById("hero");
+  const initialsW = document.querySelector(".hero-initials-wrap");
+  if (heroSec && initialsW) {
+    heroSec.addEventListener("mousemove", function (e) {
+      const { width, height, left, top } = this.getBoundingClientRect();
+      const dx = ((e.clientX - left) / width  - 0.5) * 16;
+      const dy = ((e.clientY - top)  / height - 0.5) * 16;
+      initialsW.style.transform = `translate(${dx}px, ${dy}px)`;
+    });
+    heroSec.addEventListener("mouseleave", () => {
+      initialsW.style.transform = "translate(0,0)";
+    });
+  }
 
   /* ══════════════════════════════════════════
-     5. SKILL BARS — animate on scroll
-  ══════════════════════════════════════════ */
-  const skillFills = document.querySelectorAll(".skill-fill");
-
-  const skillObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const fill = entry.target;
-          fill.style.width = fill.getAttribute("data-width") + "%";
-          skillObserver.unobserve(fill);
-        }
-      });
-    },
-    { threshold: 0.4 }
-  );
-  skillFills.forEach(fill => skillObserver.observe(fill));
-
-  /* ══════════════════════════════════════════
-     6. CONTACT FORM — Web3Forms integration
-     Messages land directly in your inbox.
-     Get your free access key at: web3forms.com
+     10. CONTACT FORM — Web3Forms
   ══════════════════════════════════════════ */
   if (form) {
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      const name  = document.getElementById("fname").value.trim();
-      const email = document.getElementById("femail").value.trim();
-      const msg   = document.getElementById("fmessage").value.trim();
+      const name  = (document.getElementById("fname")?.value || "").trim();
+      const email = (document.getElementById("femail")?.value || "").trim();
+      const msg   = (document.getElementById("fmessage")?.value || "").trim();
 
-      if (!name || !email || !msg) {
-        showFormError("Please fill in your name, email, and message.");
-        return;
+      if (!name) { showErr("Please enter your name."); return; }
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showErr("Please enter a valid email address."); return;
       }
+      if (!msg) { showErr("Please write a message."); return; }
 
-      // Button loading state
       formBtn.disabled = true;
       formBtn.innerHTML = "<span>Sending&hellip;</span><span>&#8987;</span>";
       if (formErr) formErr.style.display = "none";
 
       try {
-        const formData = new FormData(form);
-        const response = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          body: formData
+        const res  = await fetch("https://api.web3forms.com/submit", {
+          method: "POST", body: new FormData(form),
         });
-
-        const data = await response.json();
+        const data = await res.json();
 
         if (data.success) {
           form.reset();
-          formBtn.style.display = "none";
-          if (formOk) formOk.style.display = "block";
+          if (formBtn) formBtn.style.display = "none";
+          if (formOk)  formOk.style.display  = "block";
         } else {
-          showFormError(data.message || "Something went wrong. Please try again.");
+          showErr(data.message || "Something went wrong. Please try again.");
           resetBtn();
         }
-      } catch (err) {
-        showFormError("Network error. Please email me directly at parthpshirke1811@gmail.com");
+      } catch {
+        showErr("Network error — please email me directly at parthpshirke1811@gmail.com");
         resetBtn();
       }
     });
   }
 
-  function showFormError(msg) {
-    if (formErr) {
-      formErr.textContent = "\u26A0 " + msg;
-      formErr.style.display = "block";
-    }
+  function showErr(msg) {
+    if (formErr) { formErr.textContent = "\u26A0 " + msg; formErr.style.display = "block"; }
   }
-
   function resetBtn() {
-    if (formBtn) {
-      formBtn.disabled = false;
-      formBtn.innerHTML = "<span>Send Message</span><span>&#10148;</span>";
-    }
+    if (formBtn) { formBtn.disabled = false; formBtn.innerHTML = "<span>Send Message</span><span>&#10148;</span>"; }
   }
 
   /* ══════════════════════════════════════════
-     7. HERO — mouse parallax on photo ring
+     11. ACTIVE NAV ON CLICK (instant feedback)
   ══════════════════════════════════════════ */
-  const heroSection = document.getElementById("hero");
-  const photoRing   = document.querySelector(".hero-photo-ring");
-
-  if (heroSection && photoRing) {
-    heroSection.addEventListener("mousemove", function (e) {
-      const rect = this.getBoundingClientRect();
-      const cx   = rect.width  / 2;
-      const cy   = rect.height / 2;
-      const dx   = (e.clientX - rect.left - cx) / cx;
-      const dy   = (e.clientY - rect.top  - cy) / cy;
-      photoRing.style.transform =
-        "translate(" + (dx * 8) + "px, " + (dy * 8) + "px)";
+  allLinks.forEach(a => {
+    a.addEventListener("click", function () {
+      allLinks.forEach(x => x.classList.remove("active"));
+      this.classList.add("active");
     });
-
-    heroSection.addEventListener("mouseleave", function () {
-      photoRing.style.transform = "translate(0, 0)";
-    });
-  }
-
-  /* ══════════════════════════════════════════
-     8. TECH TAG hover — subtle glow ripple
-  ══════════════════════════════════════════ */
-  document.querySelectorAll(".tech-tag, .chip").forEach(tag => {
-    tag.addEventListener("mouseenter", function () {
-      this.style.transition = "all 0.2s ease";
-    });
-  });
-
-  /* ══════════════════════════════════════════
-     9. CARD entrance — stagger children
-  ══════════════════════════════════════════ */
-  const cardObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const cards = entry.target.querySelectorAll(
-            ".project-card, .exp-card, .skill-category, .about-card"
-          );
-          cards.forEach((card, i) => {
-            setTimeout(() => {
-              card.style.opacity = "1";
-              card.style.transform = "translateY(0)";
-            }, i * 80);
-          });
-          cardObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.06 }
-  );
-
-  document.querySelectorAll(
-    ".projects-grid, .experience-grid, .skills-categories, .about-cards"
-  ).forEach(grid => {
-    // Set initial state
-    grid.querySelectorAll(".project-card, .exp-card, .skill-category, .about-card").forEach(card => {
-      card.style.opacity = "0";
-      card.style.transform = "translateY(24px)";
-      card.style.transition = "opacity 0.55s ease, transform 0.55s ease";
-    });
-    cardObserver.observe(grid);
   });
 
 })();
